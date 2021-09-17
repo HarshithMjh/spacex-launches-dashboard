@@ -1,0 +1,27 @@
+@use "../../AppGlobal";
+
+#TablePaginationContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  #forLimit{
+    @include AppGlobal.label-text;
+    display: flex;
+    align-items: center;
+    .launchPerPageDropdown{
+      margin-left: 15px;
+      @include AppGlobal.label-text;
+    }
+  }
+  #forRecordsCountInfo{
+    flex-grow: 1;
+    text-align: center;
+    @include AppGlobal.label-text;
+  }
+  #forPageNavigation{
+    .MuiPaginationItem-root{
+      @include AppGlobal.label-text;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+$label-text-color: #767b89;
+$primary-text-color: #4a4f5d;
+
+@mixin primary-text{
+  color: $primary-text-color;
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-family: Roboto;
+}
+
+@mixin  label-text {
+  color: $label-text-color;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: Roboto;
+}

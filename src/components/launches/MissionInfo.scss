@@ -1,0 +1,103 @@
+@use "../../AppGlobal";
+
+#missionInfoContainer{
+  width: 50%;
+  height: 80%;
+  transform: translate(50%, 12%);
+  outline: none;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: auto;
+  #headerSection{
+    padding: 5px 5px 0px 0px;
+    height: 20px;
+    position: sticky;
+    top: 0px;
+    .close{
+      @include AppGlobal.label-text;
+      float: right;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      font-weight: 900;
+    }
+  }
+  #bodySection{
+    padding: 15px;
+    #mainDetails{
+      @include AppGlobal.label-text;
+      display: flex;
+      #forLogo{
+        height: 90px;
+        margin-right: 15px;
+        #missionLogo{
+          height: 100%;
+        }
+      }
+      #forMissionHeadings{
+        #line1{
+          height: 30px;
+          font-size: 120%;
+          .launchStatusContainer{
+            display: inline-block;
+            padding: 3px 10px;
+            margin-left: 10px;
+            text-transform: capitalize;
+            background-color: #767b89;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 70%;
+          }
+          .failed{
+            background-color: #fee0e0;
+            color: #9c0000;
+          }
+          .success{
+            background-color: #dbfbed;
+            color: #005b41;
+          }
+          .upcoming{
+            background-color: #fbfcc4;
+            color: #943e00;
+          }
+        }
+        #line2{
+          height: 25px;
+        }
+        #line3{
+          height: 25px;
+          display: flex;
+          .iconContainer{
+            cursor: pointer;
+            padding: 3px 5px;
+            height: calc(100% - 6px);
+            .linkIcon{
+              height: 100%;
+            }
+          }
+          .iconContainer:first-of-type{
+            padding-left: 0px;
+          }
+        }
+      }
+    }
+    #description{
+      @include AppGlobal.primary-text;
+      margin: 15px 0px;
+      #descriptionWikipedia{
+        margin-left: 10px;
+      }
+    }
+    .tableContainer{
+      .tableBodyContainer{
+        .label{
+          @include AppGlobal.label-text;
+          font-size: 85%;
+        }
+        .value{
+          @include AppGlobal.primary-text;
+        }
+      }
+    }
+  }
+}

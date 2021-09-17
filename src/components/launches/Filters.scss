@@ -1,0 +1,40 @@
+@use "../../AppGlobal";
+
+#filtersContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  .forDateRangeSelection{
+    @include AppGlobal.label-text;
+    padding: 10px;
+    border-radius: 10px;
+    #bottomArrow{
+      width: 0;
+      height: 0;
+      margin-left: 10px;
+      border-left: 0.3em solid transparent;
+      border-right: 0.3em solid transparent;
+      border-top: 0.4em solid AppGlobal.$label-text-color;
+    }
+  }
+  #forSomething{
+    flex-grow: 1;
+  }
+  .svgIcon{
+    width: 18px;
+    margin-right: 10px;
+  }
+  #forLaunchStatusDropdown{
+    width: 200px;
+    .launchStatusDropdown{
+      @include AppGlobal.label-text;
+      width: 100%;
+    }
+  }
+}
+.dateRangeModal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

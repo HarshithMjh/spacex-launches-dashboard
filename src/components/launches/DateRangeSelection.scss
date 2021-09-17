@@ -1,0 +1,92 @@
+@use "../../AppGlobal";
+
+#dateRangeSelectionContainer{
+  width: 700px;
+  height: 340px;
+  outline: none;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: auto;
+  #headerSection{
+    padding: 5px 5px 0px 0px;
+    height: 20px;
+    .close{
+      @include AppGlobal.label-text;
+      float: right;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      font-weight: 900;
+    }
+  }
+  #bodySection{
+    height: calc(100% - 75px);
+    display: flex;
+    #dynamicDateRangeContainer{
+      width: 140px;
+      height: 100%;
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      .dynamicDataRangeListItem{
+        @include AppGlobal.label-text;
+        color: AppGlobal.$primary-text-color;
+      }
+    }
+    .divider{
+      width: 0px;
+      height: 100%;
+      border: 2px solid #efefef;
+    }
+    .staticDateRangeContainer{
+      width: calc(100% - 145px);
+      height: 100%;
+      overflow: auto;
+      .calendarContainer{
+        padding: 10px 15px;
+        height: 100%;
+        .calendarHeading{
+          @include AppGlobal.label-text;
+          height: 20px;
+          text-align: center;
+        }
+        .calendarBody{
+          height: calc(100% - 20px);
+          .reactCalendar{
+            transform: scale3d(0.8, 0.8, 1) translate3d(0%, -12%, 0px);
+            margin: 0px auto;
+            .react-calendar__tile--now{
+              background: transparent;
+            }
+            .react-calendar__tile--now.react-calendar__tile--active{
+              background: #006edc;
+            }
+            .react-calendar__tile--now.react-calendar__tile:disabled{
+              background-color: #f0f0f0;
+            }
+            .react-calendar__year-view__months__month{
+              padding: 1em;
+            }
+            .react-calendar__navigation{
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .customInactive{
+      pointer-events: none;
+      opacity: 0.4;
+    }
+  }
+  #footerButttonSection{
+    height: 50px;
+    padding: 0px 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .actionButtonContainer{
+      padding: 0px 10px;
+    }
+  }
+}
